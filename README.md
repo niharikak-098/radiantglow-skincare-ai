@@ -40,9 +40,13 @@
 
 
 git clone https://github.com/your-username/radiantglow-skincare-ai.git
+
 cd radiantglow-skincare-ai
+
 pip install -r requirements.txt
+
 python app.py
+
 Visit http://localhost:5000 in your browser.
 
 ## 👩‍💻 About the Developer
