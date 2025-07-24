@@ -45,10 +45,7 @@ pip install -r requirements.txt
 python app.py
 Visit http://localhost:5000 in your browser.
 
-Developer Info
-Name: K. Niharika
-Email: [niharikak0313@gmail.com]
-linkedin:{https://www.linkedin.com/in/niharika-k-9502b32a4}
+
 
 
 
