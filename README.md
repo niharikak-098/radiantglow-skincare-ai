@@ -48,6 +48,15 @@ python app.py
 
 Visit http://localhost:5000 in your browser.
 
+---
+
+## 📸 Screenshots
+
+1.[📷 View Screenshot](https://github.com/user-attachments/assets/f163784b-f966-4371-b5e7-215220a87730)
+
+
+
+
 ## 👩‍💻 About the Developer
 
 **Niharika**  
