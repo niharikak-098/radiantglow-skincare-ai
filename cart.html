@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #fff9f9;
+        }
+
+        h1 {
+            color: #cc0066;
+        }
+
+        .cart-info {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 120px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .product-details {
+            text-align: left;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .product-rating, .product-price {
+            font-size: 15px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .buy-link {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .buy-link:hover {
+            background-color: #218838;
+        }
+
+        .checkout-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #cc0066;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+
+        .checkout-button:hover {
+            background-color: #a80050;
+        }
+
+        .cart-total {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Your Cart</h1>
+
+{% if cart_items %}
+    <div class="cart-info">Total items in cart: {{ cart_items|length }}</div>
+
+    {% set total = 0 %}
+    {% for item in cart_items %}
+        <div class="product-card">
+            <img src="{{ item['image'] }}" alt="{{ item['name'] }}">
+            <div class="product-details">
+                <div class="product-name">{{ item['name'] }}</div>
+                <div class="product-price">Price: ₹{{ item['price'] }}</div>
+                <a class="buy-link" href="{{ item['link'] }}" target="_blank">Buy Now</a>
+            </div>
+        </div>
+        {% set total = total + item['price'] %}
+    {% endfor %}
+
+    <div class="total"><strong>Total Amount: ₹{{ total }}</strong></div>
+
+    <!-- Fixed button to redirect to thankyou page -->
+    <a href="{{ url_for('thankyou') }}" class="checkout-button">Proceed to Checkout</a>
+
+{% else %}
+    <p>No items in cart.</p>
+    <a href="/" class="checkout-button">Go to Home</a>
+{% endif %}
+
+</body>
+</html>

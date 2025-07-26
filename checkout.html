@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RadiantGlow: Your Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #fff9f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #cc0066;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f9e6f0;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .total {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 5px 0;
+            background-color: #cc0066;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #99004d;
+        }
+
+        .empty {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Cart</h1>
+
+    {% if cart_items %}
+        <ul>
+            {% for item in cart_items %}
+                <li>
+                    <strong>{{ item.name }}</strong> - ₹{{ item.price }} × {{ item.quantity }} = ₹{{ item.price * item.quantity }}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="total">
+            <strong>Total: ₹{{ total_price }}</strong>
+        </div>
+
+        <form action="{{ url_for('buy_all') }}" method="get" style="display: inline;">
+            <button type="submit" class="btn">Proceed to Payment</button>
+        </form>
+
+        <a href="{{ url_for('thankyou') }}" class="btn">Proceed to Checkout</a>
+
+    {% else %}
+        <p class="empty">Your cart is empty.</p>
+    {% endif %}
+</body>
+</html>

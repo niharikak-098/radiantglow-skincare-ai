@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RadiantGlow - Skin & Haircare Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff0f5;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 600px;
+        }
+        select, input[type="file"], button {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            width: 100%;
+        }
+        h1 {
+            color: #c71585;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #d63384;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #333;
+        }
+        hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+        button {
+            background-color: #c71585;
+            background-image: url('https://i.pinimg.com/736x/56/83/ad/5683adca43e6cb9f5f68affa55cc6d88.jpg');
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #a0136c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RadiantGlow</h1>
+        <h2>✨ Find Your Perfect Skincare & Haircare Products ✨</h2>
+
+        <!-- 📌 Option 1: Manual Skin Input -->
+        <form action="/recommend" method="POST">
+            <label>🌸 What is your Skin Type?</label>
+            <select name="skin_type" required>
+                <option value="">-- Select --</option>
+                <option>Oily</option>
+                <option>Dry</option>
+                <option>Combination</option>
+                <option>Normal</option>
+            </select>
+
+            <label>🌼 What is your Skin Concern?</label>
+            <select name="concern" required>
+                <option value="">-- Select --</option>
+                <option>Acne</option>
+                <option>Pigmentation</option>
+                <option>Dryness</option>
+                <option>Sun Damage</option>
+            </select>
+
+            <button type="submit">💡 Recommend Me</button>
+        </form>
+
+        <hr>
+
+        <!-- 📌 Option 2: AI Image Upload -->
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label>📸 Or Upload a Skin Image:</label>
+            <input type="file" name="skin_image" accept="image/*" required>
+            <button type="submit">🤖 Analyze & Recommend</button>
+        </form>
+
+        <hr>
+    </div>
+</body>
+</html>

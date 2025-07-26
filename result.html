@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RadiantGlow: Product Recommendation Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #fff9f9;
+            text-align: center;
+        }
+
+        h1 {
+            color: #cc0066;
+        }
+
+        .explanation {
+            font-size: 18px;
+            margin: 20px auto;
+            max-width: 600px;
+            color: #333;
+        }
+
+        .uploaded-image {
+            margin-top: 20px;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        .top-products {
+            margin-top: 50px;
+        }
+
+        .product-card {
+            display: inline-block;
+            width: 250px;
+            padding: 15px;
+            margin: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            vertical-align: top;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .buy-button, .cart-button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 5px 3px;
+            background-color: #cc0066;
+            background-image: url('https://i.pinimg.com/736x/56/83/ad/5683adca43e6cb9f5f68affa55cc6d88.jpg');
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .buy-button:hover, .cart-button:hover {
+            background-color: #a80050;
+        }
+
+        .section-label {
+            margin-top: 40px;
+            font-size: 20px;
+            color: #cc0066;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Recommended Product</h1>
+
+    <div class="explanation">
+        {{ explanation|safe }}
+    </div>
+
+    {% if image_path %}
+        <img class="uploaded-image" src="{{ image_path }}" alt="Uploaded Image">
+    {% endif %}
+
+    {% if top_products %}
+    <div class="top-products">
+        <div class="section-label">Recommended Products for This Concern</div>
+
+        {% for p in top_products %}
+        <div class="product-card">
+            <img src="{{ p['Image'] }}" alt="{{ p['Product Name'] }}"
+                 onerror="this.onerror=null; this.src='https://example.com/images/default.jpg';">
+
+            <div class="product-name">{{ p['Product Name'] }}</div>
+            <div class="product-price">Price: ₹{{ p['Price'] }}</div>
+
+            {% if p['Link'] %}
+            <a class="buy-button" href="{{ p['Link'] }}" target="_blank">Buy Now</a>
+            {% endif %}
+
+            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                <input type="hidden" name="product_name" value="{{ p['Product Name'] }}">
+                <input type="hidden" name="product_image" value="{{ p['Image'] }}">
+                <input type="hidden" name="product_price" value="{{ p['Price'] }}">
+                <input type="hidden" name="product_link" value="{{ p['Link'] }}">
+                <button type="submit" class="cart-button">Add to Cart</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+    {% endif %}
+
+
+</body>
+</html>  

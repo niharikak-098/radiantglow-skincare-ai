@@ -1,0 +1,22 @@
+<!-- templates/buy_now.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body style="font-family: Arial; padding: 40px;">
+    <h1>🧾 Checkout Summary</h1>
+    {% for item in products %}
+        <div style="margin-bottom: 20px;">
+            <img src="{{ item.image }}" width="100" height="100">
+            <strong>{{ item.name }}</strong><br>
+            Price: ₹{{ item.price }}<br>
+            <a href="{{ item.link }}" target="_blank">Buy Product</a>
+        </div>
+    {% endfor %}
+    <hr>
+    <h3>Total: ₹{{ total_price }}</h3>
+    <p><em>Note: Redirecting to Amazon or product page to complete purchase.</em></p>
+</body>
+</html>

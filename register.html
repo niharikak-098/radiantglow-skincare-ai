@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RadiantGlow - Register</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/736x/56/83/ad/5683adca43e6cb9f5f68affa55cc6d88.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.8); /* white transparent layer */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(204, 0, 102, 0.3);
+            text-align: center;
+        }
+
+        h2 {
+            color: #cc0066;
+            margin-bottom: 20px;
+        }
+
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 10px 25px;
+            background-color: #cc0066;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b30059;
+        }
+
+        p {
+            margin-top: 15px;
+        }
+
+        a {
+            color: #cc0066;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <form method="POST">
+            <h2>Create a RadiantGlow Account</h2>
+            <input type="text" name="username" placeholder="Choose a Username" required>
+            <input type="password" name="password" placeholder="Choose a Password" required>
+            <button type="submit">Register</button>
+            <p>Already have an account? <a href="/login">Login here</a></p>
+        </form>
+    </div>
+</body>
+</html>
