@@ -38,8 +38,7 @@
 
 ## 📦 How to Run Locally
 
-
-git clone https://github.com/your-username/radiantglow-skincare-ai.git
+Clone or download the folder
 
 cd radiantglow-skincare-ai
 
