@@ -54,10 +54,9 @@ Visit http://localhost:5000 in your browser.
 
 ![Register Screenshot](https://github.com/user-attachments/assets/cbeefaa8-675d-4dcb-9df5-3959b7c702c7)
 
-![Screenshot (115)](https://github.com/user-attachments/assets/0f4404fe-e8d6-42c4-8ba2-8a0eb5bc5172)
+![Screenshot](https://github.com/user-attachments/assets/4175ede7-068d-4527-9e57-88fe63939ade)
 
-![Screenshot (116)](https://github.com/user-attachments/assets/63b20c31-31fe-4cb7-909a-f83b8626d5b9)
-
+![Recommendation](https://github.com/user-attachments/assets/0ac1d510-496a-4385-b1a4-13f464b25c2f)
 
 
 
