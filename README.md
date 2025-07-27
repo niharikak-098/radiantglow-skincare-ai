@@ -52,7 +52,16 @@ Visit http://localhost:5000 in your browser.
 
 ## 📸 Screenshots
 
-1.[📷 View Screenshot](https://github.com/user-attachments/assets/f163784b-f966-4371-b5e7-215220a87730)
+![Register Screenshot](https://github.com/user-attachments/assets/cbeefaa8-675d-4dcb-9df5-3959b7c702c7)
+
+
+![Screenshot ](https://github.com/user-attachments/assets/f945c7c2-7430-443a-9bf4-370dd8ef7ff3)
+
+![Screenshot ](https://github.com/user-attachments/assets/7eb3bed0-72d8-483c-8b13-93f7cc7089e6)
+
+
+
+
 
 
 
