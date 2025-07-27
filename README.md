@@ -6,12 +6,15 @@
 
 ## 🚀 Features
 
-- 📷 **Image Upload for Skin Concern Detection**
-- ✍️ **Manual Form Input for Skin Type & Concern**
-- 🎯 **Product Recommendations** based on detected concern
-- 🛒 **Add to Cart** and Wishlist functionality
-- 🔐 **User Login and Registration**
-- 🎨 Clean, responsive UI with HTML, CSS, and JavaScript
+📷 Image Upload for Skin Concern Detection
+✍️ Manual Form Input for Skin Type & Concern
+🎯 Product Recommendations
+🛒 Add to Cart Functionality
+📝 Proceed to Checkout Page
+🎉 Final Thank You Page
+🔐 User Login and Registration
+→ Secure authentication system for new users to register and existing users to log in.
+🎨 Clean, Responsive UI
 
 ---
 
